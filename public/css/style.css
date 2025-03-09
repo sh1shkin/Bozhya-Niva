@@ -1,0 +1,208 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding-top: 100px; /* Отступ для фиксированного header */
+    background-color: #fff;
+    color: #000;
+}
+
+/* HEADER */
+header {
+    background-color: #fff;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.menu-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+.donate-btn {
+    background-color: transparent;
+    padding: 8px 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 20px;
+    color: #ffcc00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.donate-btn:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Блок конференций */
+#conferences {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.conference-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.conference-item {
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: white;
+    color: #000;
+    font-weight: bold;
+}
+
+/* КАЛЕНДАРЬ СОБЫТИЙ */
+#events {
+    padding: 40px 5%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.event-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.event-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 70px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 0;
+}
+
+.event-day.active {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.event-day span {
+    font-size: 14px;
+    color: #666;
+}
+
+.event-day.selected {
+    background: #ffcc00;
+    color: #000;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.event-nav {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.event-nav:hover {
+    color: #ffcc00;
+}
+
+/* ВИДЕО */
+#videos {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.video-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.video-item {
+    flex: 0 0 auto;
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* КАРТА */
+#church-map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* ФУТЕР */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffcc00;
+    color: black;
+    font-size: 14px;
+}

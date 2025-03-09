@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель</title>
+    <link rel="stylesheet" href="css/styleAdmin.css">
+</head>
+<body>
+
+    <h1>Админ-панель</h1>
+
+    <!-- Управление конференциями -->
+    <h2>Конференции</h2>
+    <input type="text" id="conf-title" placeholder="Название">
+    <input type="date" id="conf-date">
+    <button onclick="addConference()">Добавить</button>
+    <div id="conference-list"></div>
+
+    <!-- Управление видео -->
+    <h2>Видео</h2>
+    <input type="text" id="video-title" placeholder="Название">
+    <input type="text" id="video-url" placeholder="Ссылка на видео">
+    <button onclick="addVideo()">Добавить</button>
+    <div id="video-list"></div>
+
+    <!-- Управление адресом церкви -->
+    <h2>Адрес церкви</h2>
+    <input type="text" id="new-address" placeholder="Адрес">
+    <input type="text" id="new-lat" placeholder="Широта">
+    <input type="text" id="new-lng" placeholder="Долгота">
+    <button onclick="updateAddress()">Обновить</button>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
+ 

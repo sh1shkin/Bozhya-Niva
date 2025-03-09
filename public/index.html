@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Божья Нива</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="menu-logo-container">
+                <div class="menu-icon">☰</div>
+                <img src="img/logo.png" alt="Логотип" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#events">События</a></li>
+                <li><a href="#services">Богослужения</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <a href="#donate" class="donate-btn">Пожертвовать</a>
+        </div>
+    </header>
+    
+    <!-- КОНФЕРЕНЦИИ (Добавляет админ) -->
+    <section id="conferences">
+        <h2>Конференции</h2>
+        <div class="conference-slider" id="conference-list">
+            <!-- Конференции будут загружаться через PHP -->
+        </div>
+    </section>
+    
+    <!-- СОБЫТИЯ ПО ДАТЕ -->
+    <section id="events">
+        <h2>События</h2>
+        <div id="event-days"></div>
+        <div id="event-info"></div>
+    </section>
+    
+    <!-- ПОСЛЕДНИЕ ВИДЕО (Добавляет админ) -->
+    <section id="videos">
+        <h2>Последние видео</h2>
+        <div class="video-list" id="video-list">
+            <!-- Видео будут загружаться через PHP -->
+        </div>
+    </section>
+    
+    <!-- КАРТА С АДРЕСОМ -->
+    <section id="map">
+        <h2>Наш адрес</h2>
+        <div id="church-map">[Карта]</div>
+    </section>
+    
+    <!-- ФУТЕР -->
+    <footer>
+        <p>&copy; 2025 Божья Нива. Все права защищены.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
