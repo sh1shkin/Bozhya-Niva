@@ -5,12 +5,14 @@
     margin: 0;
     padding: 0;
 }
-
+a{
+    text-decoration: none;
+}
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #fff;
     color: #111;
     display: flex;
@@ -23,15 +25,15 @@ body {
 /* ===== Контейнер ===== */
 .container {
     width: 100%;
-    padding: 0 40px; /* ✅ постоянный отступ от стен */
-    max-width: 1400px; /* или больше, если нужно */
+    padding: 0 40px; 
+    max-width: 1400px; 
     margin: 0 auto;
     box-sizing: border-box;
 }
 
 /* ===== Хедер ===== */
 header {
-    background: white;
+    background: rgb(255, 255, 255);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     padding: 16px 0;
 }
@@ -86,8 +88,14 @@ nav a:hover {
     color: #ff9800;
 }
 
+nav a.active {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 2px;
+}
+  
 .donate-btn {
-    background: #ff9800;
+    background: #ff9900;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -118,13 +126,13 @@ h2 {
 }
 
 .placeholder {
-    color: #999;
+    color: #8b8b8b;
     font-style: italic;
 }
 
 /* ===== Футер ===== */
 footer {
-    background: #ff9800;
+    background: #acacac;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -427,7 +435,7 @@ body.no-animate .nav-wrapper {
         pointer-events: none;
         visibility: hidden;
       
-        transition: transform 0.8s ease, opacity 0.8s ease, visibility 0s linear 0.8s;
+        transition: transform 1s ease, opacity 0.8s ease, visibility 0s linear 0.8s;
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
@@ -452,6 +460,7 @@ body.no-animate .nav-wrapper {
   
     nav a,
     .donate-btn {
+      font-weight: 200;
       font-size: 18px;
       width: 100%;
       padding: 12px 0;
