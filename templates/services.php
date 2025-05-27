@@ -1,43 +1,15 @@
+<?php require_once(__DIR__."/path.php")?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Богослужения — Божья Нива</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container header-inner">
-            <div class="logo">
-                <a href="/templates/index.html" class="logo">
-                    <div class="logo-wrapper">
-                        <img src="/assets/img/logo.png" alt="Божья Нива">
-                    </div>
-                </a>                
-            </div>
-        
-            <div class="menu-block">
-                <div class="burger" id="burger" aria-label="Открыть меню">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>                  
-                <div class="nav-wrapper" id="navWrapper">
-                    <nav>
-                        <a href="/templates/index.html">Главная</a>
-                        <a href="/templates/about.html">О нас</a>
-                        <a href="/templates/events.html">События</a>
-                        <a href="/templates/services.html">Богослужения</a>
-                        <a href="/templates/contacts.html">Контакты</a>
-                        <button class="donate-btn">Пожертвовать</button>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        
-    </header>
+   <?php require_once(__DIR__ . "/../app/include/header.php") ?>
 
     <main class="container">
         <section class="section">
@@ -72,5 +44,6 @@
     <script src="../assets/js/burger.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/activeLink.js"></script>
+    <script src="<?= BASE_URL ?>/assets/js/drop.js"></script>
 </body>
 </html>

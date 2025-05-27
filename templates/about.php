@@ -1,37 +1,23 @@
+<?php require_once(__DIR__."/path.php")?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас — Божья Нива</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container header-inner">
-            <div class="logo">
-                <div class="logo-wrapper">
-                    <img src="/assets/img/logo.png" alt="Божья Нива">
-                </div>
-                <h3>Божья Нива</h3>
-            </div>
-            <nav>
-                <a href="/index.html">Главная</a>
-                <a href="/about.html">О нас</a>
-                <a href="/events.html">События</a>
-                <a href="/services.html">Богослужения</a>
-                <a href="/contacts.html">Контакты</a>
-                <button class="donate-btn">Пожертвовать</button>
-            </nav>
-        </div>
-    </header>
+    <?php require_once(__DIR__ . "/../app/include/header.php") ?>
 
     <main class="container">
         <section class="section">
             <h2>О нашей церкви</h2>
             <p>Церковь "Божья Нива" — это община людей, объединённых верой, любовью и служением. Мы стремимся не только проводить богослужения, но и поддерживать каждого, кто приходит к нам в поисках истины, утешения или надежды.</p>
 
-            <p>Наша история началась более десяти лет назад с небольшой группы верующих. Сегодня это — духовный дом для сотен людей, место, где звучит живое слово Божье, где молятся, поют, служат и растут.</p>
+            <p>Наша история началась двадцать лет назад с небольшой группы верующих. Сегодня это — духовный дом для множетсва людей, место, где звучит живое слово Божье, где молятся, поют, служат и растут.</p>
 
             <p>Мы открыты для всех: для тех, кто давно в вере, и для тех, кто только начинает свой путь. Добро пожаловать в Божью Ниву!</p>
         </section>
@@ -53,5 +39,9 @@
             <p><a href="#">Политика конфиденциальности</a></p>
         </div>
     </footer>
+    <script src="../assets/js/burger.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/activeLink.js"></script>
+    <script src="<?= BASE_URL ?>/assets/js/drop.js"></script>
 </body>
 </html>

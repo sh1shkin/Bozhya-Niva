@@ -1,0 +1,145 @@
+/* Обертка для центрирования */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Высота экрана минус высота хедера */
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1140px; /* Совпадает с шириной хедера */
+  margin: 0 auto;
+}
+
+/* Контейнер самой формы */
+.form-container {
+  width: 100%;
+  max-width: 480px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #2c3e50;
+}
+
+/* Заголовок формы */
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Группа полей формы */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Метка поля */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Поля ввода */
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #f90;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-input::placeholder {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Чекбокс */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.checkbox-group input {
+  margin-right: 10px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Кнопка */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #f90;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(228, 140, 9);
+}
+
+.submit-btn:disabled {
+  background-color: #a1c4e8;
+  cursor: not-allowed;
+}
+
+/* Ссылка на вход */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.login-link a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover,
+.login-link a:focus {
+  text-decoration: underline;
+  color: #2980b9;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .form-wrapper {
+    padding: 20px 15px;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .form-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+}

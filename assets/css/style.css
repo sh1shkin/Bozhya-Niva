@@ -17,6 +17,7 @@ html, body {
     color: #111;
     display: flex;
     flex-direction: column;
+    /*font-weight: 200; */
 }
 body {
     overflow-x: hidden;
@@ -39,10 +40,16 @@ header {
 }
 
 .header-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    height: 72px;
+  }
+  
 
 .logo {
     display: flex;
@@ -73,9 +80,8 @@ header {
 nav {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
+    gap: 24px; /* было 32–40 — делаем компактнее */
+  }
 
 nav a {
     text-decoration: none;
@@ -103,6 +109,8 @@ nav a.active {
     border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s;
+    margin-left: 12px;
+    padding: 6px 14px;
 }
 
 .donate-btn:hover {
@@ -270,23 +278,6 @@ footer a {
     border: none;
 }
 
-@media (min-width: 768px) {
-    .contacts-grid {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .contact-info {
-        flex: 1;
-    }
-
-    .map-container {
-        flex: 1;
-        margin-left: 40px;
-    }
-}
-
 /* ===== Напишите нам ===== */
 
 .write-us {
@@ -387,7 +378,67 @@ body.no-animate .nav-wrapper {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
-  
+/* Стили выпадающего меню в стиле твоего дизайна */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.dropdown-toggle {
+    background-color: #f90;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 700;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #e68a00;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 160px;
+    margin-top: 10px;
+    display: none;
+    z-index: 100;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f90;
+    color: white;
+}
+
+/* Показать меню при наведении (без JS) */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
 /* ===== Адаптивность: большие экраны до 1600px ===== */
 @media (max-width: 1600px) {
     .container {
