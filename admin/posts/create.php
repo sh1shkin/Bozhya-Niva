@@ -19,27 +19,7 @@ require_once("../../app/database/database.php");
     <div class="container-fluid flex-grow-1">
         <div class="row h-100">
             <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
-                            <a class="nav-link" href="<?=BASE_URL?>/admin/posts/index.php">
-                                <i class="bi bi-file-earmark-text me-2"></i> Записи
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a class="nav-link" href="#">
-                                <i class="bi bi-people me-2"></i> Пользователи
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a class="nav-link" href="#">
-                                <i class="bi bi-tags me-2"></i> Категории
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <?php require_once("../../app/include/section.php"); ?>
 
             <!-- Main content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
@@ -77,18 +57,12 @@ require_once("../../app/database/database.php");
                     <div class="mb-3">
                         <label for="postCategory" class="form-label">Категория</label>
                         <select class="form-select" id="postCategory" name="topic" required>
-                            <option selected disabled value="">Выберите категорию</option>
-                            <option value="1">Новости</option>
-                            <option value="2">Обзоры</option>
-                            <option value="3">Руководства</option>
+                            <option selected>Выберите категорию</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
-                        <div class="invalid-feedback">
-                            Выберите категорию для записи.
-                        </div>
                     </div>
-
-
-
                     <button type="submit" class="btn btn-success">Добавить запись</button>
                 </form>
             </main>

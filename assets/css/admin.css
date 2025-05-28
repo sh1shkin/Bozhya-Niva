@@ -87,6 +87,14 @@ main .btn i {
   background-color: #dc3545;
   color: #fff;
 }
+.auth-wrapper a span {
+  font-weight: 600;
+  color: #333333;
+  margin-left: 5px; /* отступ слева от иконки или другого содержимого */
+  font-size: 1rem;
+  vertical-align: middle;
+  user-select: none;
+}
 
 /* Адаптивность */
 @media (max-width: 768px) {

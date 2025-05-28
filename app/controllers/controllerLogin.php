@@ -18,9 +18,9 @@
         } elseif (mb_strlen($password) < 5) {
             $_SESSION['errorMsg'] = "Пароль не может быть короче 8 символов";
         } else {
-            $admin = selectOne('admins', ['email' => $email]);
+            $admin = selectOne('admins', ['admins_email' => $email]);
 
-            if ($admin && password_verify($password, $admin["password_hash"])) {
+            if ($admin && password_verify($password, $admin["admins_password_hash"])) {
                 loginAdmin($admin);
                 exit();
             } else {

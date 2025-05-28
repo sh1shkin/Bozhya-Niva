@@ -437,6 +437,23 @@ body.no-animate .nav-wrapper {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form .form-label {
+    font-weight: 500;
+}
+
+form .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
 
 
 /* ===== Адаптивность: большие экраны до 1600px ===== */

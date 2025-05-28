@@ -1,3 +1,4 @@
+<?php require_once(__DIR__."/../controllers/userSession.php") ?>
 <header>
     <div class="container header-inner">
         <div class="logo">
@@ -7,7 +8,6 @@
                 </div>
             </a>
         </div>
-
         <div class="menu-block">
             <div class="burger" id="burger" aria-label="Открыть меню">
                 <span></span><span></span><span></span>
@@ -20,17 +20,12 @@
                     <a href="<?= BASE_URL ?>/templates/services.php">Богослужения</a>
                     <a href="<?= BASE_URL ?>/templates/contacts.php">Контакты</a>
                     <button class="donate-btn">Пожертвовать</button>
-
                     <div class="auth-wrapper">
-                        <?php if (!isset($_SESSION['username'])): ?>
-                            <a href="<?= BASE_URL ?>/templates/login.php" class="auth-btn">Выйти</a>
-                        <?php else: ?>
-                            <a href="<?= BASE_URL ?>/admin/posts/index.php" class="auth-btn">
-                                <?= htmlspecialchars($_SESSION['username']) ?>
-                            </a>
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <span><?= htmlspecialchars($_SESSION['username']) ?></span>
+                            <a href="<?= BASE_URL ?>/app/controllers/logout.php" class="auth-btn">Выйти</a>
                         <?php endif; ?>
                     </div>
-
                 </nav>
             </div>
         </div>

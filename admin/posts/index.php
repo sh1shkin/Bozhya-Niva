@@ -23,27 +23,7 @@ require_once("../../app/include/header-admin.php");
 
     <div class="row h-100">
         <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            <div class="position-sticky pt-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2">
-                        <a class="nav-link active" href="<?=BASE_URL?>/admin/posts/index.php">
-                            <i class="bi bi-file-earmark-text me-2"></i> Записи
-                        </a>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-people me-2"></i> Пользователи
-                        </a>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-tags me-2"></i> Категории
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php require_once("../../app/include/section.php"); ?>
 
         <!-- Main content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">

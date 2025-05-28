@@ -39,7 +39,7 @@
         return $result === false ? null : $result;
     }
 
-function  SelectAll($tables) :? array {
+    function  selectAll($tables) :? array {
         global $pdo;
         $sql = "SELECT * FROM $tables";
         $stmt = $pdo->prepare($sql);
@@ -47,23 +47,25 @@ function  SelectAll($tables) :? array {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function Insert($table, $param = []) {
+    function Insert($table, $param = []) : int {
         global $pdo;
         $i = 0;
         $column = implode(', ', array_keys($param));
         $placeholder = implode(', ', array_map(fn($place) => ":$place", array_keys($param)));
 
         $sql = "INSERT INTO $table ($column) VALUES ($placeholder)";
-        pre_print($sql);
+        //pre_print($sql);
         //exit();
         $stmt = $pdo->prepare($sql);
         $stmt -> execute($param);
+        return $pdo->lastInsertId();
     }
     $param = [
-        "username" => "Kirill",
-        "email" => "Kirill@gmail.com",
-        "password_hash" => HashedPassword("111111111"),
-        "created_at" => date("Y-m-d H:i:s")
+        "admins_username" => "maks_root",
+        "admins_email" => "maksim_shishkin_04@inbox.ru",
+        "admins_password_hash" => HashedPassword("gnom007Rossia."),
+        "admins_created_at" => date("Y-m-d H:i:s"),
+        "admins_root" => 1
     ];
     //Insert("admins", $param);
     function update($table, $userId, $param = []) {
@@ -73,17 +75,17 @@ function  SelectAll($tables) :? array {
         }
         $placeholder = implode(', ', array_map(fn($place) => "$place = :$place", array_keys($param)));
         $param['id'] = $userId;
-        $sql = "UPDATE $table SET $placeholder WHERE id = :id";
+        $sql = "UPDATE $table SET $placeholder WHERE {$table}_id = :id";
         $stmt = $pdo->prepare($sql);
         //$stmt -> bindParam(':id', $userId, PDO::PARAM_INT);
         $stmt -> execute($param);
     }
     function delete($table, $userId) {
         global $pdo;
-        $sql = "DELETE FROM $table WHERE id = :id";
+        $primaryKey = $table . "_id"; // Например, topics_id
+        $sql = "DELETE FROM $table WHERE $primaryKey = :id";
         $stmt = $pdo->prepare($sql);
-        //$stmt -> bindParam(':id', $userId, PDO::PARAM_INT);
-        $stmt -> execute(["id" => $userId]);
+        $stmt->execute(["id" => $userId]);
     }
 
     function getAdminId($email) : ?int {
@@ -106,7 +108,7 @@ function  SelectAll($tables) :? array {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result === false ? null : $result;
     }
-function HashedPassword($password) {
+    function HashedPassword($password) {
         $password_hashed = password_hash($password, PASSWORD_DEFAULT);
         return $password_hashed;
     }
