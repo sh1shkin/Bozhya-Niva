@@ -112,3 +112,28 @@
         $password_hashed = password_hash($password, PASSWORD_DEFAULT);
         return $password_hashed;
     }
+
+    function selectAllFromPosts($table1, $table2, $params = []): ?array
+    {
+        global $pdo;
+        $sql = "SELECT 
+        t1.posts_id,
+        t1.posts_title,
+        t1.posts_img,
+        t1.posts_content,
+        t1.topics_id,
+        t1.posts_status,
+        t2.admins_username
+     FROM $table1 AS t1 JOIN $table2 AS t2 ON t1.admins_id = t2.admins_id ";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        dataBasesCheckError($stmt);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    function deletePostByPostsId($posts_id)
+    {
+        global $pdo;
+        $sql = "DELETE FROM posts WHERE posts_id = :posts_id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['posts_id' => $posts_id]);
+    }

@@ -1,6 +1,9 @@
 <?php
 require_once("../../templates/path.php");
 require_once("../../app/database/database.php");
+require_once("../../app/controllers/posts.php");
+require_once("../../app/controllers/userSession.php");
+global $allPosts;
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +15,6 @@ require_once("../../app/database/database.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
-
 </head>
 <body>
 <?php
@@ -46,32 +48,30 @@ require_once("../../app/include/header-admin.php");
                         <th scope="col" style="width: 5%">ID</th>
                         <th scope="col" style="width: 45%">Заголовок</th>
                         <th scope="col" style="width: 20%">Автор</th>
-                        <th scope="col" style="width: 15%">Редактировать</th>
-                        <th scope="col" style="width: 15%">Удалить</th>
+                        <th scope="col" style="width: 10%">Редактировать</th>
+                        <th scope="col" style="width: 7%">Удалить</th>
+                        <th scope="col" style="width: 23%">Публикация</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Статья</td>
-                        <td>Admin</td>
-                        <td><a href="#" class="btn btn-sm btn-outline-primary">Edit</a></td>
-                        <td><a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Другая статья</td>
-                        <td>Admin</td>
-                        <td><a href="#" class="btn btn-sm btn-outline-primary">Edit</a></td>
-                        <td><a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Еще одна статья</td>
-                        <td>Admin</td>
-                        <td><a href="#" class="btn btn-sm btn-outline-primary">Edit</a></td>
-                        <td><a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
-                    </tr>
+                    <?php foreach ($allPosts as $key => $post): ?>
+                        <tr>
+                            <td><?php echo $key + 1;?></td>
+                            <td><?php echo $post["posts_title"]?></td>
+                            <td><?php echo $_SESSION['username']?></td>
+                            <td><a href="edit.php?posts_id=<?= $post['posts_id'] ?>" class="btn btn-sm btn-outline-primary">Редактировать</a></td>
+                            <td><a href="edit.php?del_id=<?= $post['posts_id'] ?>" class="btn btn-sm btn-outline-danger">Удалить</a></td>
+
+
+
+                            <?php if($post['posts_status'] === 1): ?>
+                                <td><a href="index.php?publish=0&posts_id=<?= $post['posts_id'] ?>" class="btn btn-sm btn-outline-warning">Снять с публикации</a></td>
+                            <?php else: ?>
+                                <td><a href="index.php?publish=1&posts_id=<?= $post['posts_id'] ?>" class="btn btn-sm btn-outline-success">Опубликовать</a></td>
+                            <?php endif; ?>
+                        </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

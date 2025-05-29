@@ -1,6 +1,9 @@
 <?php
 require_once("../../templates/path.php");
 require_once("../../app/database/database.php");
+require_once("../../app/controllers/posts.php");
+require_once("../../app/controllers/topics.php");
+global $allTopics;
 ?>
     <!doctype html>
     <html lang="ru">
@@ -56,14 +59,21 @@ require_once("../../app/database/database.php");
 
                     <div class="mb-3">
                         <label for="postCategory" class="form-label">Категория</label>
-                        <select class="form-select" id="postCategory" name="topic" required>
-                            <option selected>Выберите категорию</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" id="postCategory" name="topic-posts" required>
+                            <option selected>Категория поста</option>
+                            <?php foreach ($allTopics as $key => $topic): ?>
+                                <option value="<?php echo $topic['topics_id'];?>"><?php echo $topic['topics_name']?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Добавить запись</button>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="1" id="postStatus" name="publish" checked>
+                        <label class="form-check-label" for="postStatus">
+                            Опубликовать пост
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-success" name="btn-create-posts">Добавить запись</button>
                 </form>
             </main>
         </div>
@@ -74,4 +84,3 @@ require_once("../../app/database/database.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>
-<?php

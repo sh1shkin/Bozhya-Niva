@@ -1,7 +1,9 @@
 <?php
-
+require_once("../../app/controllers/users.php");
 require_once("../../templates/path.php");
 require_once("../../app/database/database.php");
+global $user;
+global $allAdmins;
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,27 +45,23 @@ require_once("../../app/include/header-admin.php");
                     <thead class="table-light">
                     <tr>
                         <th scope="col" style="width: 5%">ID</th>
-                        <th scope="col" style="width: 45%">Логин</th>
-                        <th scope="col" style="width: 25%">Роль</th>
-                        <th scope="col" style="width: 25%">Управление пользователем</th>
+                        <th scope="col" style="width: 40%">Логин</th>
+                        <th scope="col" style="width: 20%">Роль</th>
+                        <th scope="col" style="width: 20%">Редактирование</th>
+                        <th scope="col" style="width: 20%">Удалить</th>
                     </tr>
                     </thead>
+                    <?php foreach ($allAdmins as $key => $admin):?>
                     <tbody>
                     <tr>
-                        <td>2</td>
-                        <td>Kirill</td>
-                        <td>Admin</td>
-                        <td><a href="#" class="btn btn-sm btn-outline-primary">Edit</a></td>
-                        <td><a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Danil</td>
-                        <td>Admin</td>
-                        <td><a href="#" class="btn btn-sm btn-outline-primary">Edit</a></td>
-                        <td><a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
+                        <td><?php echo $key + 1; ?></td>
+                        <td><?php echo $admin["admins_username"]; ?></td>
+                        <td></td>
+                        <td><a href="edit.php?admin_id=<?= $admin['admins_id'] ?>" class="btn btn-sm btn-outline-primary">Редактировать</a></td>
+                        <td><a href="edit.php?del_id=<?= $admin['admins_id'] ?>" class="btn btn-sm btn-outline-danger">Удалить</a></td>
                     </tr>
                     </tbody>
+                    <?php endforeach;?>
                 </table>
             </div>
         </main>

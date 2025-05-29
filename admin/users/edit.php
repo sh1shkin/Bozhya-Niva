@@ -1,7 +1,15 @@
 <?php
-
 require_once("../../templates/path.php");
 require_once("../../app/database/database.php");
+require_once("../../app/controllers/users.php");
+$errorMsg = "";
+global $id;
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['admins_id'])) {
+    $admin = selectOne("admins", ['admins_id' => $_GET['admins_id']]);
+    if ($admin) {
+        $id = $admin['admins_id'];
+    }
+}
 ?>
     <!doctype html>
     <html lang="ru">
@@ -15,7 +23,9 @@ require_once("../../app/database/database.php");
         <link rel="stylesheet" href="../../assets/css/style.css">
     </head>
     <body>
-    <?php require_once("../../app/include/header-admin.php"); ?>
+    <?php
+    require_once("../../app/include/header-admin.php");
+    ?>
 
     <div class="container-fluid flex-grow-1">
         <div class="row h-100">
@@ -25,15 +35,16 @@ require_once("../../app/database/database.php");
             <!-- Main content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="h4 mb-0">Добавление записи</h2>
+                    <h2 class="h4 mb-0">Редактирование пользователя</h2>
                     <div>
                         <a href="#" class="btn btn-warning">
-                            <i class="bi bi-card-list me-1"></i> Manage Posts
+                            <i class="bi bi-card-list me-1"></i> Manage Category
                         </a>
                     </div>
                 </div>
 
                 <form action="../../app/controllers/users.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <input type="hidden" name="admins_id" value="<?= htmlspecialchars($id) ?>">
                     <div class="mb-3">
                         <label for="login" class="form-label">Логин</label>
                         <input type="text" id="login" name="login" class="form-control" placeholder="example" required>
@@ -54,9 +65,8 @@ require_once("../../app/database/database.php");
                         <input type="password" id="secondPassword" name="secondPassword" class="form-control" placeholder="Повторите пароль" required>
                     </div>
 
-                    <button type="submit" class="btn btn-success" name="btn-create-users">Добавить запись</button>
+                    <button type="submit" class="btn btn-success" name="admin-edit">Обновить</button>
                 </form>
-
             </main>
         </div>
     </div>
