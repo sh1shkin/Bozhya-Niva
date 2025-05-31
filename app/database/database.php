@@ -130,10 +130,3 @@
         dataBasesCheckError($stmt);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    function deletePostByPostsId($posts_id)
-    {
-        global $pdo;
-        $sql = "DELETE FROM posts WHERE posts_id = :posts_id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['posts_id' => $posts_id]);
-    }

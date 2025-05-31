@@ -24,7 +24,7 @@ require_once("../../app/include/header-admin.php");
 <!-- Main and Sidebar layout -->
 <div class="container-fluid flex-grow-1">
     <div class="row h-100">
-    <?php require_once("../../app/include/section.php"); ?>
+        <?php require_once("../../app/include/section.php"); ?>
 
         <!-- Main content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
@@ -52,15 +52,15 @@ require_once("../../app/include/header-admin.php");
                     </tr>
                     </thead>
                     <?php foreach ($allAdmins as $key => $admin):?>
-                    <tbody>
-                    <tr>
-                        <td><?php echo $key + 1; ?></td>
-                        <td><?php echo $admin["admins_username"]; ?></td>
-                        <td></td>
-                        <td><a href="edit.php?admin_id=<?= $admin['admins_id'] ?>" class="btn btn-sm btn-outline-primary">Редактировать</a></td>
-                        <td><a href="edit.php?del_id=<?= $admin['admins_id'] ?>" class="btn btn-sm btn-outline-danger">Удалить</a></td>
-                    </tr>
-                    </tbody>
+                        <tbody>
+                        <tr>
+                            <td><?php echo $key + 1; ?></td>
+                            <td><?php echo $admin["admins_username"]; ?></td>
+                            <td></td>
+                            <td><a href="edit.php?admin_id=<?= $admin['admins_id'] ?>" class="btn btn-sm btn-outline-primary">Редактировать</a></td>
+                            <td><a href="edit.php?del_id=<?= $admin['admins_id'] ?>" class="btn btn-sm btn-outline-danger">Удалить</a></td>
+                        </tr>
+                        </tbody>
                     <?php endforeach;?>
                 </table>
             </div>

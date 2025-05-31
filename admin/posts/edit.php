@@ -37,7 +37,7 @@ global $id;
             </div>
 
             <form action="../../app/controllers/posts.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
-                <input type="hidden" name="posts_id" value="<?= htmlspecialchars($id) ?>">
+                <input type="hidden" name="delete_id" value="<?=$id; ?>">
                 <div class="mb-3">
                     <label for="postTitle" class="form-label">Заголовок</label>
                     <input type="text" class="form-control" id="postTitle" name="title" value="<?= htmlspecialchars($title) ?>" required>
@@ -64,7 +64,6 @@ global $id;
                 <div class="mb-3">
                     <label for="postCategory" class="form-label">Категория</label>
                     <select class="form-select" id="postCategory" name="topic-posts" required>
-                        <option disabled>Категория поста</option>
                         <?php foreach ($allTopics as $topic): ?>
                             <option value="<?= $topic['topics_id'] ?>" <?= $topic['topics_id'] == $topic ? 'selected' : '' ?>>
                                 <?= $topic['topics_name'] ?>

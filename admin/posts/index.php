@@ -61,7 +61,7 @@ require_once("../../app/include/header-admin.php");
                             <td><?php echo $post["posts_title"]?></td>
                             <td><?php echo $_SESSION['username']?></td>
                             <td><a href="edit.php?posts_id=<?= $post['posts_id'] ?>" class="btn btn-sm btn-outline-primary">Редактировать</a></td>
-                            <td><a href="edit.php?del_id=<?= $post['posts_id'] ?>" class="btn btn-sm btn-outline-danger">Удалить</a></td>
+                            <td><a href="edit.php?delete_id=<?=$post['posts_id'];?>" class="btn btn-sm btn-outline-danger">Удалить</a></td>
 
 
 

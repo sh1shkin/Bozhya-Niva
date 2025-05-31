@@ -1,8 +1,8 @@
 <?php
-    require_once(__DIR__ . "/../../templates/path.php");
-    require_once(__DIR__ . "/../database/database.php");
-    require_once(__DIR__ . "/../controllers/userSession.php");
-    $allAdmins = selectAll("admins");
+require_once(__DIR__ . "/../../templates/path.php");
+require_once(__DIR__ . "/../database/database.php");
+require_once(__DIR__ . "/../controllers/userSession.php");
+$allAdmins = selectAll("admins");
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn-create-users'])) {
     $login = trim($_POST['login']);
     $email = trim($_POST['email']);

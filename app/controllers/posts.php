@@ -99,11 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn-create-posts'])) {
     update("posts", $id, $updatedPost);
     header("Location: " . BASE_URL . "/admin/posts/index.php");
     exit();
-} if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['del_id'])) {
-    $id = $_GET['del_id'];
-    delete('posts', $id);
-    header("Location: " . BASE_URL . "/admin/posts/index.php");
-    exit;
 }
 if ($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['publish']) && isset($_GET['posts_id'])) {
     $id = $_GET['posts_id'];
@@ -111,4 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === "GET" && isset($_GET['publish']) && isset($_G
     update("posts", $id, ['posts_status' => $status]);
     header("Location: " . BASE_URL . "/admin/posts/index.php");
     exit();
+} if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete_id'])){
+    $id = $_GET['delete_id'];
+    delete('posts', $id);
+    header('location: ' . BASE_URL . 'admin/posts/index.php');
 }

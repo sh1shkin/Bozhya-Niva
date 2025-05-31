@@ -7,5 +7,4 @@ function loginAdmin($admin) {
     $_SESSION['root'] = $admin['admins_root'];
     header("Location: " . BASE_URL . "/admin/posts/index.php");
     exit();
-
 }
