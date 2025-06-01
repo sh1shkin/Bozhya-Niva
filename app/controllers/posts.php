@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn-create-posts'])) {
     $topic = trim($_POST['topic-posts']);
     $publish = isset($_POST['publish']) ? 1 : 0;
 
-    // Обработка изображения (если загружено новое)
+    // Доббаваляю картинку
     if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
         $imgName = time() . '_' . basename($_FILES['img']['name']);
         $destination = '/bozhya_niva/uploads/' . $imgName;
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn-create-posts'])) {
         }
     } else {
         $oldPost = selectOne("posts", ['posts_id' => $id]);
-        $img = $oldPost['posts_img']; // оставить старое изображение
+        $img = $oldPost['posts_img']; // оставить старую картинку
     }
 
     $updatedPost = [

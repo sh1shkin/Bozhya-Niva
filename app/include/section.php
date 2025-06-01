@@ -19,6 +19,11 @@
                     <i class="bi bi-tags me-2"></i> Категории
                 </a>
             </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link" href="../../admin/video/index.php">
+                    <i class="bi bi-camera-video me-2"></i> Видео
+                </a>
+            </li>
         </ul>
     </div>
 </div>

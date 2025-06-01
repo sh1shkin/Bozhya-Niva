@@ -46,8 +46,39 @@
         $stmt -> execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+function selectAllVideo($table, $conditions = [], $orderBy = ''): array {
+    global $pdo;
 
-    function Insert($table, $param = []) : int {
+    $sql = "SELECT * FROM $table";
+    $params = [];
+
+    if (!empty($conditions)) {
+        $clauses = [];
+        foreach ($conditions as $key => $value) {
+            $clauses[] = "$key = ?";
+            $params[] = $value;
+        }
+        $sql .= " WHERE " . implode(" AND ", $clauses);
+    }
+
+    if ($orderBy !== '') {
+        $sql .= " " . $orderBy;
+    }
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($params);
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function extractYoutubeId($url) {
+    if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\\?v=|embed\\/|v\\/))([^\s&]+)/', $url, $matches)) {
+        return $matches[1];
+    }
+    return '';
+}
+
+
+function Insert($table, $param = []) : int {
         global $pdo;
         $i = 0;
         $column = implode(', ', array_keys($param));

@@ -19,13 +19,13 @@
                     <a href="<?= BASE_URL ?>/templates/events.php">События</a>
                     <a href="<?= BASE_URL ?>/templates/services.php">Богослужения</a>
                     <a href="<?= BASE_URL ?>/templates/contacts.php">Контакты</a>
-                    <button class="donate-btn">Пожертвовать</button>
                     <div class="auth-wrapper">
                         <?php if (isset($_SESSION['username'])): ?>
                             <span><?= htmlspecialchars($_SESSION['username']) ?></span>
                             <a href="<?= BASE_URL ?>/app/controllers/logout.php" class="auth-btn">Выйти</a>
                         <?php endif; ?>
                     </div>
+                    <button class="donate-btn">Пожертвовать</button>
                 </nav>
             </div>
         </div>
