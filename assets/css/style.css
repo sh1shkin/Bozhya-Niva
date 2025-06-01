@@ -496,6 +496,57 @@ body.no-animate .nav-wrapper {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+
+/*==========стили таблицы календаря=============*/
+.calendar-wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+}
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.calendar-table th, .calendar-table td {
+    border: 1px solid #ddd;
+    vertical-align: top;
+    padding: 6px;
+    height: 120px;
+    overflow-y: auto;
+}
+.calendar-table th {
+    background: #f8f9fa;
+    text-align: center;
+    font-weight: 600;
+}
+.date-number {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.date-prev-next {
+    color: #aaa;
+}
+.event-item {
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    padding: 3px 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event-time {
+    color: #666;
+    margin-right: 4px;
+}
+.today {
+    background-color: #d9f2e6;
+    border-left: 4px solid #4caf50;
+    padding-left: 4px;
+}
 /* Стили выпадающего меню в стиле твоего дизайна */
 .dropdown {
     position: relative;

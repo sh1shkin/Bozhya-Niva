@@ -28,19 +28,33 @@ require_once (__DIR__."/../app/controllers/videos.php");
         <div class="carousel-wrapper">
             <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <?php foreach ($allPosts as $index => $post): ?>
-                        <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                            <div class="post-card mx-auto">
-                                <a href="post.php?id=<?= $post['posts_id'] ?>" class="text-decoration-none text-dark">
-                                    <div class="image-wrapper">
-                                        <img src="<?= $post['posts_img'] ?>" alt="<?= htmlspecialchars($post['posts_title']) ?>">
-                                    </div>
-                                    <p class="post-title"><?= htmlspecialchars($post['posts_title']) ?></p>
-                                    <p class="post-content"><?= htmlspecialchars($post['posts_content']) ?></p>
-                                </a>
+
+                    <?php
+                    $activeSet = false; // Флаг для отслеживания первого активного элемента
+                    foreach ($allPosts as $index => $post):
+
+                        // Проверяем, что пост опубликован (status = 1)
+                        if ($post['posts_status'] == 1):
+
+                            // Если это первый подходящий пост, делаем его active
+                            $isActive = !$activeSet ? 'active' : '';
+                            $activeSet = true; // Устанавливаем флаг, чтобы больше не было active
+                            ?>
+                            <div class="carousel-item <?= $isActive ?>">
+                                <div class="post-card mx-auto">
+                                    <a href="post.php?id=<?= $post['posts_id'] ?>" class="text-decoration-none text-dark">
+                                        <div class="image-wrapper">
+                                            <img src="<?= $post['posts_img'] ?>" alt="<?= htmlspecialchars($post['posts_title']) ?>">
+                                        </div>
+                                        <p class="post-title"><?= htmlspecialchars($post['posts_title']) ?></p>
+                                        <p class="post-content"><?= htmlspecialchars($post['posts_content']) ?></p>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php
+                        endif;
+                    endforeach;
+                    ?>
                 </div>
 
                 <!-- Стрелки -->

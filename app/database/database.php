@@ -161,3 +161,36 @@ function Insert($table, $param = []) : int {
         dataBasesCheckError($stmt);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+function getAllMinistries() {
+    return selectAll('ministries');
+}
+
+function getMinistryById(int $id): ?array {
+    return selectOne('ministries', ['ministries_id' => $id]);
+}
+function createMinistry(array $data): int {
+    return Insert('ministries', [
+        'ministries_name' => $data['ministries_name'],
+        'ministries_content' => $data['ministries_content'],
+        'ministries_day' => $data['ministries_day'],
+        'ministries_start_time' => $data['ministries_start_time'],
+        'ministries_location' => $data['ministries_location'],
+        'ministries_created_at' => date('Y-m-d H:i:s'),
+    ]);
+}
+function updateMinistry(int $id, array $data): void {
+    update('ministries', $id, [
+        'ministries_name' => $data['ministries_name'],
+        'ministries_content' => $data['ministries_content'],
+        'ministries_day' => $data['ministries_day'],
+        'ministries_start_time' => $data['ministries_start_time'],
+        'ministries_location' => $data['ministries_location'],
+        // 'ministries_created_at' обычно не меняется при обновлении
+    ]);
+}
+function deleteMinistry(int $id): void {
+    delete('ministries', $id);
+}
+function twoDigits($num) {
+    return str_pad($num, 2, '0', STR_PAD_LEFT);
+}
