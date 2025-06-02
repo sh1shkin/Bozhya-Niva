@@ -30,10 +30,18 @@
                             </a>
                         <?php endif; ?>
                     </div>
-                    <button class="donate-btn">Пожертвовать</button>
+                    <button class="donate-btn" id="donateBtn">Пожертвовать</button>
 
                 </nav>
             </div>
         </div>
     </div>
 </header>
+
+
+<script>
+    document.getElementById('donateBtn').addEventListener('click', function() {
+        window.open('<?= BASE_URL ?>/templates/donatForm.php', 'donateWindow', 'width=500,height=600');
+    });
+</script>
+

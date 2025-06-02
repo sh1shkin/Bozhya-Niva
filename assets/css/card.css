@@ -1,0 +1,40 @@
+.post-page {
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.post-page h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.post-page img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.post-page p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .post-page {
+        margin: 30px 15px;
+        padding: 25px 20px;
+    }
+
+    .post-page h1 {
+        font-size: 26px;
+    }
+}

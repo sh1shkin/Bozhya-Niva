@@ -95,6 +95,30 @@ main .btn i {
   vertical-align: middle;
   user-select: none;
 }
+.custom-error-box {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 18px 24px;
+  background-color: #ffe9e6;
+  border-left: 6px solid #d76b49;
+  border-radius: 10px;
+  color: #4b1e1e;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  gap: 16px;
+}
+
+.custom-error-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.custom-error-message {
+  font-size: 16px;
+  line-height: 1.4;
+}
 
 /* Адаптивность */
 @media (max-width: 768px) {
