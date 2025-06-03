@@ -34,10 +34,7 @@ require_once("../../app/controllers/topics.php");
                     <h2 class="h4 mb-0">Категории</h2>
                     <div>
                         <a href="create.php" class="btn btn-success me-2">
-                            <i class="bi bi-plus-circle me-1"></i> Add Category
-                        </a>
-                        <a href="#" class="btn btn-warning">
-                            <i class="bi bi-card-list me-1"></i> Manage Category
+                            <i class="bi bi-plus-circle me-1"></i> Добавить категории
                         </a>
                     </div>
                 </div>

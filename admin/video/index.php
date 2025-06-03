@@ -30,7 +30,7 @@ global $allVideos;
                     <a href="create.php" class="btn btn-success me-2">
                         <i class="bi bi-plus-circle me-1"></i> Добавить видео
                     </a>
-                    <a href="#" class="btn btn-warning">
+                    <a href="../../templates/allVideo.php" class="btn btn-warning">
                         <i class="bi bi-collection-play me-1"></i> Все видео
                     </a>
                 </div>

@@ -17,10 +17,7 @@ require_once(__DIR__ . "/path.php");
 
 <?php require_once(__DIR__ . "/../app/include/header.php") ?>
 
-<!-- ✅ Вывод ошибок -->
 
-
-<h1 class="form-title">Авторизация</h1>
 
 
 <div class="form-wrapper">

@@ -1,7 +1,7 @@
 <?php
 require_once("../../templates/path.php");
 require_once("../../app/database/database.php");
-require_once("../../app/controllers/ministries.php"); // контроллер, где должны быть $errors, $formData, $id
+require_once("../../app/controllers/ministries.php");
 ?>
 <!doctype html>
 <html lang="ru">
@@ -28,7 +28,7 @@ require_once("../../app/controllers/ministries.php"); // контроллер, �
                 <h2 class="h4 mb-0">Редактирование служения</h2>
                 <div>
                     <a href="index.php" class="btn btn-warning">
-                        <i class="bi bi-arrow-left me-1"></i> Вернуться к списку
+                        <i class="bi bi-card-list me-1"></i> Вернуться
                     </a>
                 </div>
             </div>

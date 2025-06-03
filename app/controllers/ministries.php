@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'edit'
     }
 }
 
-// Для редактирования - загрузка текущих данных
+// подгрузка текущх данных
 $editingMinistry = null;
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
@@ -77,16 +77,14 @@ $month = date('m');
 if (isset($_GET['year'])) $year = (int)$_GET['year'];
 if (isset($_GET['month'])) $month = (int)$_GET['month'];
 
-// Основные расчёты для календаря
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-$firstDayWeek = date('N', strtotime("$year-$month-01")); // 1-Пн, ...,7-Вс
+$firstDayWeek = date('N', strtotime("$year-$month-01"));
 
-// Дата для предыдущего месяца
 $prevMonth = $month == 1 ? 12 : $month - 1;
 $prevYear = $month == 1 ? $year - 1 : $year;
 $daysInPrevMonth = cal_days_in_month(CAL_GREGORIAN, $prevMonth, $prevYear);
 
-// Группируем события по дате
+
 $eventsByDate = [];
 foreach ($ministries as $m) {
     $date = $m['ministries_date'] ?? null;
@@ -94,9 +92,5 @@ foreach ($ministries as $m) {
         $eventsByDate[$date][] = $m;
     }
 }
-
-// Получаем сегодня для выделения
 $today = date('Y-m-d');
-
-// Общее количество ячеек 6 недель × 7 дней = 42
 $totalCells = 42;

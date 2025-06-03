@@ -15,9 +15,6 @@ require_once (__DIR__."/../app/controllers/videos.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-
-
 </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <body class="initial-load">
@@ -110,7 +107,7 @@ require_once (__DIR__."/../app/controllers/videos.php");
     <script src="../assets/js/burger.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/activeLink.js"></script>
-    
+
 
 </body>
 </html>

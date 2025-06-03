@@ -1,6 +1,5 @@
 <?php require_once(__DIR__."/path.php");
-require_once (__DIR__."/../app/controllers/posts.php");
-require_once (__DIR__."/../app/database/database.php");
+require_once (__DIR__."/../app/controllers/UserSession.php");
 require_once (__DIR__."/../app/controllers/videos.php");
 ?>
 

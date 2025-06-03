@@ -32,10 +32,7 @@ require_once("../../app/include/header-admin.php");
                 <h2 class="h4 mb-0">Управление пользователями</h2>
                 <div>
                     <a href="create.php" class="btn btn-success me-2">
-                        <i class="bi bi-plus-circle me-1"></i> Add User
-                    </a>
-                    <a href="#" class="btn btn-warning">
-                        <i class="bi bi-card-list me-1"></i> Manage User
+                        <i class="bi bi-plus-circle me-1"></i> Добавить пользователя
                     </a>
                 </div>
             </div>

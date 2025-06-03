@@ -1,7 +1,7 @@
 <?php
 require_once("../../templates/path.php");
 require_once("../../app/database/database.php");
-require_once("../../app/controllers/ministries.php");  // Контроллер для служений
+require_once("../../app/controllers/ministries.php");
 require_once("../../app/controllers/userSession.php");
 global $ministries;
 
@@ -40,9 +40,6 @@ function dayOfWeekName($num) {
                 <div>
                     <a href="create.php" class="btn btn-success me-2">
                         <i class="bi bi-plus-circle me-1"></i> Добавить служение
-                    </a>
-                    <a href="#" class="btn btn-warning">
-                        <i class="bi bi-card-list me-1"></i> Управлять служениями
                     </a>
                 </div>
             </div>

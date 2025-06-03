@@ -7,7 +7,7 @@
     }
     function dataBasesCheckError($stmt)
     {
-        $error_info = $stmt->errorInfo(); // функция errorInfo() - получает расширенную информацию об ошибке представить можно в виде массива
+        $error_info = $stmt->errorInfo(); // функция errorInfo() - получаеет расширенную информацию об ошибке представить можно в виде массива
         // 0 - код ошибки, 1 - код ошибки задаваемый драйвером, 2 - сообщение об ошибке
         if($error_info[0] !== PDO::ERR_NONE) {
             echo $error_info[2];
@@ -85,8 +85,6 @@ function Insert($table, $param = []) : int {
         $placeholder = implode(', ', array_map(fn($place) => ":$place", array_keys($param)));
 
         $sql = "INSERT INTO $table ($column) VALUES ($placeholder)";
-        //pre_print($sql);
-        //exit();
         $stmt = $pdo->prepare($sql);
         $stmt -> execute($param);
         return $pdo->lastInsertId();
@@ -113,7 +111,7 @@ function Insert($table, $param = []) : int {
     }
     function delete($table, $userId) {
         global $pdo;
-        $primaryKey = $table . "_id"; // Например, topics_id
+        $primaryKey = $table . "_id";
         $sql = "DELETE FROM $table WHERE $primaryKey = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(["id" => $userId]);

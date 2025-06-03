@@ -3,7 +3,6 @@
     require_once(__DIR__ . "/../database/database.php");
     require_once("../../templates/path.php");
 
-    // Очищаем предыдущее сообщение об ошибке
     unset($_SESSION['errorMsg']);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["button-aut"])) {
@@ -28,7 +27,6 @@
             }
         }
 
-        // Если есть ошибка - возвращаем на форму авторизации
         if (isset($_SESSION['errorMsg'])) {
             header("Location: " . BASE_URL . "/templates/login.php"); // Укажите правильный путь
             exit();

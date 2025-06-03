@@ -18,7 +18,7 @@ $admins_id = $_SESSION['id'];
 
 $allVideos = selectAll($table);
 $latestVideos = selectAllVideo($table, ['video_status' => 1]);
-// СОЗДАНИЕ ВИДЕО
+
 if (isset($_POST['btn-create-video'])) {
     $video_title = trim($_POST['video_title']);
     $video_url = trim($_POST['video_url']);
@@ -41,7 +41,6 @@ if (isset($_POST['btn-create-video'])) {
     }
 }
 
-// ПОЛУЧЕНИЕ ОДНОГО ВИДЕО
 if (isset($_GET['video_id'])) {
     $video = selectOne($table, ['video_id' => $_GET['video_id']]);
     if ($video) {
@@ -52,7 +51,6 @@ if (isset($_GET['video_id'])) {
     }
 }
 
-// ОБНОВЛЕНИЕ ВИДЕО
 if (isset($_POST['btn-update-video'])) {
     $video_id = $_POST['video_id'];
     $video_title = trim($_POST['title']); // в edit.php поле называется name="title"
@@ -74,14 +72,12 @@ if (isset($_POST['btn-update-video'])) {
     }
 }
 
-// УДАЛЕНИЕ
 if (isset($_GET['delete_id'])) {
     delete($table, $_GET['delete_id']);
     header('Location: ../../admin/video/index.php');
     exit();
 }
 
-// ИЗМЕНЕНИЕ СТАТУСА (publish / unpublish)
 if (isset($_GET['publish']) && isset($_GET['video_id'])) {
     $video_id = $_GET['video_id'];
     $publish_status = $_GET['publish'] ? 1 : 0;

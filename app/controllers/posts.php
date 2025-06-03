@@ -27,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn-create-posts'])) {
         // Обработка изображения
         if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
             $imgName = time() . '_' . basename($_FILES['img']['name']);
-            $destination = '/bozhya_niva/uploads/' . $imgName; // относительный путь для БД
-            $fullPath = $_SERVER['DOCUMENT_ROOT'] . $destination; // абсолютный путь на сервере
+            $destination = '/bozhya_niva/uploads/' . $imgName;
+            $fullPath = $_SERVER['DOCUMENT_ROOT'] . $destination;
 
             // Перемещение файла
             if (!move_uploaded_file($_FILES['img']['tmp_name'], $fullPath)) {
@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn-create-posts'])) {
             $img = '';
         }
 
-        // Если нет ошибок — сохраняем
         if ($errorMsg === '') {
             $posts = [
                 'admins_id' => $_SESSION['id'],

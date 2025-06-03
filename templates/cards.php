@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . "/../app/database/database.php");
 require_once(__DIR__ . "/../app/controllers/posts.php");
-
+require_once (__DIR__."/../app/controllers/UserSession.php");
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Некорректный идентификатор поста");
 }

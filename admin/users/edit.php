@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['admins_id'])) {
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="h4 mb-0">Редактирование пользователя</h2>
                     <div>
-                        <a href="#" class="btn btn-warning">
-                            <i class="bi bi-card-list me-1"></i> Manage Category
+                        <a href="index.php" class="btn btn-warning">
+                            <i class="bi bi-card-list me-1"></i> Вернуться
                         </a>
                     </div>
                 </div>

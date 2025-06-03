@@ -1,4 +1,6 @@
-<?php require_once(__DIR__."/path.php")?>
+<?php require_once(__DIR__."/path.php");
+require_once (__DIR__."/../app/controllers/UserSession.php");
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,7 +13,7 @@
 
 </head>
 <body>
-  <?php require_once(__DIR__ . "/../app/include/header.php") ?>
+<?php require_once(__DIR__ . "/../app/include/header.php") ?>
 
   <main class="container">
     <section class="section">

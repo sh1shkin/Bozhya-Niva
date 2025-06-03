@@ -1,5 +1,6 @@
 <?php
 require_once("../app/controllers/userSession.php");
+require_once (__DIR__."/../app/controllers/UserSession.php");
 ?>
 
 <!DOCTYPE html>

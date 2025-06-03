@@ -26,8 +26,8 @@ global $video_id;
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2 class="h4 mb-0"><i class="bi bi-camera-video me-2"></i>Редактирование видео</h2>
-                <a href="index.php" class="btn btn-secondary">
-                    <i class="bi bi-arrow-left-circle me-1"></i> Назад
+                <a href="index.php" class="btn btn-warning">
+                    <i class="bi bi-card-list me-1"></i> Вернуться
                 </a>
             </div>
 

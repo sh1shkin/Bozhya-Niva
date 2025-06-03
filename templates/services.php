@@ -1,5 +1,7 @@
 <?php require_once(__DIR__."/path.php");
-require_once(__DIR__ . "/../app/controllers/ministries.php") ?>
+require_once(__DIR__ . "/../app/controllers/ministries.php");
+require_once (__DIR__."/../app/controllers/UserSession.php");
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -18,7 +20,6 @@ require_once(__DIR__ . "/../app/controllers/ministries.php") ?>
         <h2>Расписание богослужений</h2>
 
         <?php
-        // Текущий месяц и год
         $year = date('Y');
         $month = date('m');
         if (isset($_GET['year'])) $year = (int)$_GET['year'];
@@ -31,10 +32,8 @@ require_once(__DIR__ . "/../app/controllers/ministries.php") ?>
         $prevYear = $month == 1 ? $year - 1 : $year;
         $daysInPrevMonth = cal_days_in_month(CAL_GREGORIAN, $prevMonth, $prevYear);
 
-        $totalCells = 42; // 6 недель * 7 дней
+        $totalCells = 42;
         $today = date('Y-m-d');
-
-        // Группировка событий по дате
         $eventsByDate = [];
         foreach ($ministries as $m) {
             if (!empty($m['ministries_date'])) {
